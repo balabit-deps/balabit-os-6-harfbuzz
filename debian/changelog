@@ -1,0 +1,381 @@
+harfbuzz (1.0.1-1ubuntu0.1) xenial-security; urgency=medium
+
+  * SECURITY UPDATE: memory access issue in hb-ot-layout-gpos-table.hh
+    - debian/patches/CVE-2015-8947.patch: call check_struct earlier in
+      src/hb-ot-layout-gpos-table.hh.
+    - CVE-2015-8947
+  * SECURITY UPDATE: buffer over-read via inverted length check
+    - debian/patches/CVE-2016-2052.patch: fix hmtx wrong table length check
+      in src/hb-ot-font.cc.
+    - CVE-2016-2052
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Wed, 17 Aug 2016 11:14:40 -0400
+
+harfbuzz (1.0.1-1build2) wily; urgency=medium
+
+  * No change rebuilds for missing ddebs
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 14 Oct 2015 11:30:16 +0100
+
+harfbuzz (1.0.1-1build1) wily; urgency=medium
+
+  * Rebuild for icu 55.
+
+ -- Matthias Klose <doko@ubuntu.com>  Mon, 03 Aug 2015 21:21:30 +0000
+
+harfbuzz (1.0.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Make failing tests fatal again.
+    See comment in #737473
+    Thanks to Pino Toscano <pino@debian.org>
+  * debian/copyright: Update upstream copyright years.
+  * debian/libharfbuzz0b.symbols, debian/libharfbuzz-gobject0.symbols: update
+    symbols files.
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@users.sourceforge.net>  Tue, 28 Jul 2015 14:29:08 +0200
+
+harfbuzz (0.9.41-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/libharfbuzz0b.symbols: update symbols file.
+  * debian/libharfbuzz-gobject0.symbols: remove symbol that was introduced by
+    mistake by upstream. SO bump is not required since no other package
+    depends on that package yet.
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@users.sourceforge.net>  Mon, 29 Jun 2015 15:29:27 +0200
+
+harfbuzz (0.9.40-3) unstable; urgency=medium
+
+  * Provide debug symbols package for libharfbuzz0b (Closes: #744989)
+  * debian/copyright: Update copyright years.
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@users.sourceforge.net>  Sat, 09 May 2015 10:13:11 +0200
+
+harfbuzz (0.9.40-2) unstable; urgency=medium
+
+  * Upload to unstable.
+  * Remove debian/gbp.conf, not needed in master branch.
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@users.sourceforge.net>  Sun, 26 Apr 2015 19:52:42 +0200
+
+harfbuzz (0.9.40-1) experimental; urgency=medium
+
+  * New upstream release.
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@users.sourceforge.net>  Tue, 24 Mar 2015 13:19:09 +0200
+
+harfbuzz (0.9.39-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Update symbols file
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@users.sourceforge.net>  Thu, 05 Mar 2015 11:52:42 +0200
+
+harfbuzz (0.9.38-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Update symbols file
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@users.sourceforge.net>  Thu, 05 Feb 2015 20:01:51 +0200
+
+harfbuzz (0.9.37-1) experimental; urgency=medium
+
+  * New upstream release.
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@users.sourceforge.net>  Thu, 25 Dec 2014 14:19:35 +0200
+
+harfbuzz (0.9.36-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Add debian/gbp.conf to set debian branch to experimental.
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@users.sourceforge.net>  Fri, 28 Nov 2014 08:32:35 +0200
+
+harfbuzz (0.9.35-2) unstable; urgency=medium
+
+  * debain/clean: Remove test/shaping/*.pyc during clean
+  * debian/rules: Build static libraries.
+  * debian/libharfbuzz-dev.install:
+    + Install static libraries (LP: #1385616)
+    + Simplify file
+  * debian/control: Bumped Standards-Version to 3.9.6
+  * Update my email.
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@users.sourceforge.net>  Thu, 30 Oct 2014 12:43:28 +0200
+
+harfbuzz (0.9.35-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Remove hb-xetex.patch, it is included upstream.
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@sabily.org>  Thu, 14 Aug 2014 11:47:30 +0300
+
+harfbuzz (0.9.34-2) unstable; urgency=medium
+
+  * Added hb-xetex.patch patch from upstream to fix shape-plan caching with
+    more than one requested shaper
+    (Closes: #750785)
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@sabily.org>  Wed, 13 Aug 2014 17:01:09 +0300
+
+harfbuzz (0.9.34-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@sabily.org>  Sat, 09 Aug 2014 10:17:03 +0300
+
+harfbuzz (0.9.33-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Upload to unstable.
+  * Added unbreak_abi.diff patch to Re-add hb_version_check to unbreak API/ABI.
+    This patch should be removed on the next API/ABI break by upstream.
+    See: #755094
+  * Revert last SO bump, libharfbuzz0c back to libharfbuzz0b.
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@sabily.org>  Wed, 30 Jul 2014 11:38:44 +0200
+
+harfbuzz (0.9.32-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Update symbols file
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@sabily.org>  Sun, 20 Jul 2014 10:23:40 +0200
+
+harfbuzz (0.9.30-1) experimental; urgency=medium
+
+  * New upstream release.
+  * SO bumped libharfbuzz0b to libharfbuzz0c.
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@sabily.org>  Tue, 15 Jul 2014 10:33:48 +0200
+
+harfbuzz (0.9.29-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/upstream/metadata: Add upstream metadata information.
+  * debian/rules: Get failing tests' stdout and stderr so we have some
+    information when a build fails.
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@sabily.org>  Thu, 05 Jun 2014 11:05:24 +0300
+
+harfbuzz (0.9.28-2) unstable; urgency=medium
+
+  * Build-Dep on gobject-introspection >= 1.34.0 (Closes: #749305)
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@sabily.org>  Mon, 26 May 2014 11:54:26 +0300
+
+harfbuzz (0.9.28-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Update copyright years
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@sabily.org>  Thu, 08 May 2014 10:00:19 +0200
+
+harfbuzz (0.9.27-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@sabily.org>  Sat, 22 Mar 2014 09:22:46 +0200
+
+harfbuzz (0.9.26-4) unstable; urgency=low
+
+  * Don't bail out on failed tests, the failed tests are not a problem in
+    HarfBuzz itself.
+    Thanks to Emilio Pozuelo Monfort <pochu@debian.org>
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@sabily.org>  Tue, 04 Feb 2014 15:48:03 +0200
+
+harfbuzz (0.9.26-3) unstable; urgency=low
+
+  * Re-enable the test suite.
+    Since HarfBuzz has two builds, dh_auto_test needs to be overridden as
+    with the other dh_auto_*.
+    Thanks to Pino Toscano <pino@debian.org> (Closes: #737473)
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@sabily.org>  Mon, 03 Feb 2014 04:33:36 +0200
+
+harfbuzz (0.9.26-2) unstable; urgency=low
+
+  [ Iain Lane ]
+  * Use Conflicts instead of Breaks for old library packages with same SONAME
+    to ensure they are fully removed (thanks to Steve Langasek in Ubuntu).
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@sabily.org>  Sun, 02 Feb 2014 23:26:21 +0200
+
+harfbuzz (0.9.26-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/copyright: Update copyright years.
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@sabily.org>  Sun, 02 Feb 2014 22:07:55 +0200
+
+harfbuzz (0.9.25-1) unstable; urgency=medium
+
+  [ أحمد المحمودي (Ahmed El-Mahmoudy) ]
+  * New upstream release.
+
+  [ Iain Lane ]
+  * Build with dh-autoreconf; thanks to Matthias Klose for the original change
+    in Ubuntu.
+  * Build without silent rules.
+
+  [ Emilio Pozuelo Monfort ]
+  * Wrap build depends.
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@sabily.org>  Wed, 18 Dec 2013 13:29:08 +0200
+
+harfbuzz (0.9.24-2) unstable; urgency=low
+
+  * debian/control:
+    + Add missing breaks/replaces on libharfbuzz0a.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Wed, 04 Dec 2013 17:49:59 +0100
+
+harfbuzz (0.9.24-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/control: Bumped Standards-Version to 3.9.5.
+  * SO bumped libharfbuzz0a to libharfbuzz0b
+  * Added libharfbuzz-gobject0 for GObject bindings library and
+    gir1.2-harfbuzz-0.0 for GObject introspection data
+  * Added documentation package: libharfbuzz-doc
+  * debian/libharfbuzz0b.symbols: Updated symbols file.
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@sabily.org>  Wed, 20 Nov 2013 09:49:08 +0200
+
+harfbuzz (0.9.19-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@sabily.org>  Tue, 23 Jul 2013 22:37:34 +0200
+
+harfbuzz (0.9.18-3) unstable; urgency=low
+
+  * debian/patches/0001-Fix-build-without-graphite2.patch:
+    + Removed, graphite2 is now available on armel and sparc so we can
+      build with graphite2 support everywhere.
+  * debian/control,
+    debian/rules:
+    + Build with graphite2 support everywhere in the normal build.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Sun, 02 Jun 2013 15:23:10 +0200
+
+harfbuzz (0.9.18-2) unstable; urgency=low
+
+  * Add myself to Uploaders.
+  * debian/patches/0001-Fix-build-without-graphite2.patch:
+    + Fix build when graphite2 is not installed. Fixes FTBFS on armel
+      and sparc.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Sun, 02 Jun 2013 11:16:48 +0200
+
+harfbuzz (0.9.18-1) unstable; urgency=low
+
+  * New upstream release.
+  * Removed icu.patch & graphite2.diff patches, as they got applied upstream.
+  * Removed autoreconf
+  * Add Graphite2 support (except for armel & sparc archs)
+  * debian/libharfbuzz-dev.install: Install harfbuzz-icu.* development files.
+  * Do not disable ICU in udeb, it is not needed anymore and it causes FTBFS.
+  * Added libharfbuzz-icu0 package in which ICU support library is installed.
+  * Renamed libharfbuzz0 to libharfbuzz0a.
+  * debian/control:
+    + Added libharfbuzz-icu0 to -dev package Depends.
+    + Added Breaks/Replaces: libharfbuzz0 for libharfbuzz0a
+  * debian/*.symbols: fixed package names.
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@sabily.org>  Fri, 31 May 2013 17:02:53 +0200
+
+harfbuzz (0.9.17-4) unstable; urgency=low
+
+  * Added icu.patch patch to add configure option to enable/disable ICU 
+    support.
+    Thanks to Emilio Pozuelo Monfort <pochu@debian.org>
+  * Added graphite2.diff patch to add configure option to enable/disable 
+    Graphite2 support.
+  * Use autoreconf
+  * Re-enable ICU support
+  * Disable ICU support only for the udeb target. (Closes: #709926)
+    (LP: #1184340)
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@sabily.org>  Mon, 27 May 2013 22:47:30 +0200
+
+harfbuzz (0.9.17-3) unstable; urgency=low
+
+  * Disable ICU support, as it pulls libicu & libstdc++, for which no udebs
+    exist.
+    Thanks to Michael Biebl <biebl@debian.org> (Closes: #709796)
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@sabily.org>  Sat, 25 May 2013 22:35:22 +0200
+
+harfbuzz (0.9.17-2) unstable; urgency=low
+
+  * Added udeb package
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@sabily.org>  Thu, 23 May 2013 13:00:29 +0200
+
+harfbuzz (0.9.17-1) unstable; urgency=low
+
+  * New upstream release.
+  * Upload to unstable.
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@sabily.org>  Wed, 22 May 2013 17:00:26 +0200
+
+harfbuzz (0.9.16-1) experimental; urgency=low
+
+  * New upstream release.
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@sabily.org>  Sat, 20 Apr 2013 19:28:43 +0200
+
+harfbuzz (0.9.15-1) experimental; urgency=low
+
+  * New upstream release.
+    + src/check-symbols.sh: Removed T marker (Closes: #704665)
+  * Fixed libharfbuzz-dev description: FriBidi -> HarfBuzz
+  * debian/libharfbuzz0.symbols: Added Build-Depends-Package field
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@sabily.org>  Tue, 02 Apr 2013 09:01:01 +0200
+
+harfbuzz (0.9.14-1) experimental; urgency=low
+
+  * New upstream release.
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@sabily.org>  Sat, 30 Mar 2013 22:17:31 +0200
+
+harfbuzz (0.9.13-1) experimental; urgency=low
+
+  * New upstream release.
+  * Disable Graphite2 backend, since it is unbuildable on some archs.
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@sabily.org>  Thu, 28 Feb 2013 09:29:37 +0200
+
+harfbuzz (0.9.12-1) experimental; urgency=low
+
+  * New upstream release.
+  * debian/copyright: Update copyright years.
+  * debian/libharfbuzz0.symbols: Update symbols.
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@sabily.org>  Sun, 20 Jan 2013 12:44:54 +0200
+
+harfbuzz (0.9.10-1) experimental; urgency=low
+
+  * New upstream release.
+  * debian/control:
+    + Bumped Standards-Version to 3.9.4
+    + Use canonical URIs in VCS-* fields
+    + Added libgraphite2-dev to Build-Deps to enable Graphite2 backend
+  * Update symbols file
+  * Use autotools_dev to update outdated autotools helper files.
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@sabily.org>  Wed, 09 Jan 2013 01:00:54 +0200
+
+harfbuzz (0.9.9-1) experimental; urgency=low
+
+  * Initial Release. (Closes: #687161)
+
+  [ Andreas Henriksson ]
+  * Imported Upstream version 0.9.9
+  * Update symbols file for 0.9.9
+
+ -- أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@sabily.org>  Fri, 07 Dec 2012 10:31:26 +0200

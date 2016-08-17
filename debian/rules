@@ -1,0 +1,37 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode. 
+#export DH_VERBOSE=1
+
+# Let's get failing tests' stdout and stderr so we have some information when
+# a build fails
+export VERBOSE=1
+
+%:
+	dh $@ --with autoreconf --with gir
+
+override_dh_auto_configure:
+	dh_auto_configure --builddir build-main -- --with-graphite2=yes --enable-introspection --with-gobject --enable-gtk-doc --disable-silent-rules --enable-static
+	dh_auto_configure --builddir build-udeb -- --with-graphite2=no --disable-silent-rules
+
+override_dh_auto_clean:
+	dh_auto_clean --builddir build-main
+	dh_auto_clean --builddir build-udeb
+
+override_dh_auto_build:
+	dh_auto_build --builddir build-main
+	dh_auto_build --builddir build-udeb
+
+override_dh_auto_test:
+	dh_auto_test --builddir build-main
+	dh_auto_test --builddir build-udeb
+
+override_dh_auto_install:
+	dh_auto_install --builddir build-main
+
+override_dh_makeshlibs:
+	dh_makeshlibs -V --add-udeb="libharfbuzz0-udeb"
+
+override_dh_strip:
+	dh_strip -plibharfbuzz0b --dbg-package=libharfbuzz0b-dbg
+	dh_strip -Nlibharfbuzz0b

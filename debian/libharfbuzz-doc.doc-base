@@ -1,0 +1,11 @@
+Document: harfbuzz
+Title: HarfBuzz Reference Manual
+Author: Behdad Esfahbod
+Abstract: HarfBuzz is an implementation of the OpenType Layout engine (aka
+ layout engine) and the script-specific logic (aka shaping engine); this
+ details how to program using it.
+Section: Programming/C
+
+Format: HTML
+Index: /usr/share/gtk-doc/html/harfbuzz/index.html
+Files: /usr/share/gtk-doc/html/harfbuzz/*.html
